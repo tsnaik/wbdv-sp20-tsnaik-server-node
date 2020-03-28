@@ -3,7 +3,7 @@ const app = express();
 var bodyParser = require('body-parser')
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
- 
+const PORT = process.env.PORT || 5000; 
 // parse application/json
 app.use(bodyParser.json())
 const mongoose = require('mongoose');
@@ -25,4 +25,4 @@ require('./controllers/users.controller.server')(app);
 
 app.get('/hello', (req, res) => res.send("hello world"));
 
-app.listen(3000);
+app.listen(PORT);
