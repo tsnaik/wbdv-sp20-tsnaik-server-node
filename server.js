@@ -1,10 +1,8 @@
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser')
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 const PORT = process.env.PORT || 5000; 
-// parse application/json
 app.use(bodyParser.json())
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/whiteboard-cs5610-sp20',
@@ -19,8 +17,9 @@ app.use(function (req, res, next) {
     next();
 });
 
-require('./controllers/quizzes.controller.server')(app);
-require('./controllers/questions.controller.server')(app);
+require('./controllers/quizzes.controller.server')(app)
+require('./controllers/questions.controller.server')(app)
+require('./controllers/quiz-attempts.controller.server')(app)
 require('./controllers/users.controller.server')(app);
 
 app.get('/hello', (req, res) => res.send("hello world"));
