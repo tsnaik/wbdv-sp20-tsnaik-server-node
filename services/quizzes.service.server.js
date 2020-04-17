@@ -1,10 +1,4 @@
-const quizzesDao = require('../dao/quizzes.dao.server')
-const quizzes = require('./quizzes')
-findAllQuizzes = () => quizzesDao.findAllQuizzes();
-
-findQuizById = (quizId) => quizzesDao.findQuizById(quizId);
-
-module.exports = {
-    findAllQuizzes,
-    findQuizById
-}
+const quizzesDao = require('../daos/quizzes.dao.server')
+const findAllQuizzes = () => quizzesDao.findAllQuizzes()
+const findQuizById = (qid) => quizzesDao.findQuizById(qid)
+module.exports = { findAllQuizzes, findQuizById }
