@@ -1,9 +1,4 @@
-const quizzesModel = require('../models/quizzes/quizzes.model.sever');
-
-const findAllQuizzes = () => quizzesModel.find();
-const findQuizById = (qid) => quizzesModel.findById(qid);
-const createQuiz = (quiz) => quizzesModel.create(quiz)
-
-module.exports = {
-    createQuiz, findAllQuizzes, findQuizById
-}
+const quizzesModel = require('../models/quizzes/quizzes.model.server')
+const findAllQuizzes = () => quizzesModel.find()
+const findQuizById = (quizId) => quizzesModel.findById(quizId)
+module.exports = { findAllQuizzes, findQuizById }
