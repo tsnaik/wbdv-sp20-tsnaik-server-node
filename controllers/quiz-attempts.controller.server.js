@@ -1,4 +1,4 @@
-const quizAttemptDao = require('../daos/quiz-attempts.dao.server')
+const quizAttemptDao = require('../dao/quiz-attempts.dao.server')
 module.exports = (app) => {
    app.post('/api/quizzes/:qid/attempts', (req, res) =>
        quizAttemptDao.createAttempt( req.params.qid, req.body)
